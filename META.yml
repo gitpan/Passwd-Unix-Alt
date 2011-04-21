@@ -28,4 +28,4 @@ requires:
 resources:
   homepage: http://search.cpan.org/dist/Passwd-Unix-Alt/
   repository: http://github.com/sharyanto/perl-Passwd-Unix-Alt
-version: 0.5201
+version: 0.5202

@@ -1,5 +1,9 @@
 Revision history for Perl extension Passwd::Unix::Alt
 
+0.5202   2011-04-21
+         [ETC]
+         - Second attempt to pass PAUSE indexer
+
 0.5201   2011-04-21
          [ENHANCEMENTS]
          - Set $Passwd::Unix::errstr on errors

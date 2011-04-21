@@ -1,6 +1,7 @@
-package Passwd::Unix;
+package Passwd::Unix::Alt;
 # ABSTRACT: Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
+package Passwd::Unix;
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
 
 use warnings;
@@ -863,11 +864,11 @@ __END__
 
 =head1 NAME
 
-Passwd::Unix - Manipulate /etc/{passwd,shadow,group,gshadow} entries
+Passwd::Unix::Alt - Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
 =head1 VERSION
 
-version 0.5201
+version 0.5202
 
 =head1 SYNOPSIS
 

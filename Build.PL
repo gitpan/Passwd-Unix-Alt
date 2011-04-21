@@ -17,7 +17,7 @@ my %module_build_args = (
     'Steven Haryanto <stevenharyanto@gmail.com>'
   ],
   'dist_name' => 'Passwd-Unix-Alt',
-  'dist_version' => '0.5201',
+  'dist_version' => '0.5202',
   'license' => 'perl',
   'module_name' => 'Passwd::Unix::Alt',
   'recommends' => {},

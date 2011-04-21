@@ -1,8 +1,9 @@
 NAME
-    Passwd::Unix - Manipulate /etc/{passwd,shadow,group,gshadow} entries
+    Passwd::Unix::Alt - Manipulate /etc/{passwd,shadow,group,gshadow}
+    entries
 
 VERSION
-    version 0.5201
+    version 0.5202
 
 SYNOPSIS
             use Passwd::Unix::Alt;
