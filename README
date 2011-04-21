@@ -3,21 +3,21 @@ NAME
     entries
 
 VERSION
-    version 0.5202
+    version 0.5203
 
 SYNOPSIS
             use Passwd::Unix::Alt;
 
-            my $pu = Passwd::Unix->new();
+            my $pu = Passwd::Unix::Alt->new();
 
             # adding a new user
             $pu->user("example", $pu->encpass("my_secret"), $pu->maxuid + 1, 10,
                                               "My User", "/home/example", "/bin/bash");
-            die $Passwd::Unix::errstr if $Passwd::Unix::errstr;
+            die $Passwd::Unix::Alt::errstr if $Passwd::Unix::Alt::errstr;
 
             # change a user's password
             $pu->passwd("example", $pu->encpass("newsecret"));
-            die $Passwd::Unix::errstr if $Passwd::Unix::errstr;
+            die $Passwd::Unix::Alt::errstr if $Passwd::Unix::Alt::errstr;
 
             # list users
             foreach my $user ($pu->users) {
@@ -29,7 +29,7 @@ SYNOPSIS
 
             # delete user
             $pu->del("example");
-            die $Passwd::Unix::errstr if $Passwd::Unix::errstr;
+            die $Passwd::Unix::Alt::errstr if $Passwd::Unix::Alt::errstr;
 
             # or
 
@@ -41,10 +41,10 @@ SYNOPSIS
 
             user("example", encpass("my_secret"), $pu->maxuid + 1, 10,
                  "My User", "/home/example", "/bin/bash" );
-            die $Passwd::Unix::errstr if $Passwd::Unix::errstr;
+            die $Passwd::Unix::Alt::errstr if $Passwd::Unix::Alt::errstr;
 
             passwd("example",encpass("newsecret"));
-            die $Passwd::Unix::errstr if $Passwd::Unix::errstr;
+            die $Passwd::Unix::Alt::errstr if $Passwd::Unix::Alt::errstr;
 
             foreach my $user (users()) {
                 print "Username: $user\nFull Name: ", gecos($user), "\n\n";
@@ -53,7 +53,7 @@ SYNOPSIS
             my $uid = uid('example');
 
             del("example");
-            die $Passwd::Unix::errstr if $Passwd::Unix::errstr;
+            die $Passwd::Unix::Alt::errstr if $Passwd::Unix::Alt::errstr;
 
 DESCRIPTION
     The Passwd::Unix module provides an abstract interface to /etc/passwd,
@@ -67,16 +67,12 @@ ABOUT PASSWD::UNIX::ALT
     merged back to Passwd::Unix eventually. The rest of the documentation is
     Passwd::Unix's.
 
-    Note that the package is still Passwd::Unix. This is so that
-    Passwd::Unix::Alt is a simple drop-in replacement for Passwd::Unix (only
-    a simple replace of 'require' or 'use' line is needed).
-
     Notable differences:
 
     *   does not require root privileges unless necessary (useful for
         testing)
 
-    *   report error string in $Passwd::Unix::errstr
+    *   report error string in $Passwd::Unix::Alt::errstr
 
         Instead of just returning true/false status or carping to stderr..
 
@@ -111,13 +107,13 @@ SUBROUTINES/METHODS
         This method will delete the list of users. It has no effect if the
         supplied users do not exist.
 
-        Set $Passwd::Unix::errstr on error.
+        Set $Passwd::Unix::Alt::errstr on error.
 
     del_group( GROUPNAME0, GROUPNAME1... )
         This method will delete the list of groups. It has no effect if the
         supplied groups do not exist.
 
-        Set $Passwd::Unix::errstr on error.
+        Set $Passwd::Unix::Alt::errstr on error.
 
     encpass( PASSWORD )
         This method will encrypt plain text into unix style MD5 password.
@@ -169,7 +165,7 @@ SUBROUTINES/METHODS
         parameters, the named user will be created or modified if it already
         exists.
 
-        Set $Passwd::Unix::errstr on error.
+        Set $Passwd::Unix::Alt::errstr on error.
 
     group( GROUPNAME [,GID, ARRAYREF] )
         This method can add, modify, or return information about a group.
@@ -180,7 +176,7 @@ SUBROUTINES/METHODS
         If you supply all three parameters, the named group will be created
         or modified if it already exists.
 
-        Set $Passwd::Unix::errstr on error.
+        Set $Passwd::Unix::Alt::errstr on error.
 
     users()
         This method returns a list of all existing usernames.

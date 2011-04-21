@@ -12,8 +12,8 @@ my $tmp_dir;
 
 sub setup {
     $tmp_dir = tempdir(CLEANUP=>1);
-    $CWD = $::tmp_dir;
-    diag "tmp dir is $::tmp_dir";
+    $CWD = $tmp_dir;
+    diag "tmp dir is $tmp_dir";
 
     write_file("$tmp_dir/passwd", <<'_');
 root:x:0:0:root:/root:/bin/bash
@@ -48,7 +48,7 @@ nobody:!::
 u1:!::
 u2:!::u1
 _
-    $::pu //= Passwd::Unix->new(
+    $::pu //= Passwd::Unix::Alt->new(
         passwd  => "$tmp_dir/passwd",
         group   => "$tmp_dir/group",
         shadow  => "$tmp_dir/shadow",
