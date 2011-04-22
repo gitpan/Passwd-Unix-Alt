@@ -22,10 +22,9 @@ requires:
   File::Spec: 0
   File::Temp: 0
   File::chdir: 0
-  Struct::Compare: 0
   Test::More: 0.96
   perl: 5.010
 resources:
   homepage: http://search.cpan.org/dist/Passwd-Unix-Alt/
   repository: http://github.com/sharyanto/perl-Passwd-Unix-Alt
-version: 0.5203
+version: 0.5204

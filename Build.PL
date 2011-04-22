@@ -17,7 +17,7 @@ my %module_build_args = (
     'Steven Haryanto <stevenharyanto@gmail.com>'
   ],
   'dist_name' => 'Passwd-Unix-Alt',
-  'dist_version' => '0.5203',
+  'dist_version' => '0.5204',
   'license' => 'perl',
   'module_name' => 'Passwd::Unix::Alt',
   'recommends' => {},
@@ -31,7 +31,6 @@ my %module_build_args = (
     'File::Spec' => '0',
     'File::Temp' => '0',
     'File::chdir' => '0',
-    'Struct::Compare' => '0',
     'Test::More' => '0.96',
     'perl' => '5.010'
   },
