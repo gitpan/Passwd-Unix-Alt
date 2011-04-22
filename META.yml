@@ -27,4 +27,4 @@ requires:
 resources:
   homepage: http://search.cpan.org/dist/Passwd-Unix-Alt/
   repository: http://github.com/sharyanto/perl-Passwd-Unix-Alt
-version: 0.5204
+version: 0.5205
