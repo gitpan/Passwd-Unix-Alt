@@ -882,7 +882,7 @@ Passwd::Unix::Alt - Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
 =head1 VERSION
 
-version 0.5205
+version 0.5206
 
 =head1 SYNOPSIS
 
