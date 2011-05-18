@@ -1,4 +1,7 @@
 package Passwd::Unix::Alt;
+BEGIN {
+  $Passwd::Unix::Alt::VERSION = '0.5207';
+}
 # ABSTRACT: Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
 
@@ -14,7 +17,6 @@ use File::Basename qw(dirname basename);
 use Crypt::PasswdMD5 qw(unix_md5_crypt);
 require Exporter;
 #======================================================================
-$VERSION = '0.52';
 @ISA = qw(Exporter);
 @EXPORT_OK = qw(check_sanity reset encpass passwd_file shadow_file
 				group_file backup debug warnings del del_user uid gid
@@ -882,7 +884,7 @@ Passwd::Unix::Alt - Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
 =head1 VERSION
 
-version 0.5206
+version 0.5207
 
 =head1 SYNOPSIS
 
@@ -890,7 +892,7 @@ version 0.5206
 
 	my $pu = Passwd::Unix::Alt->new();
 
-	# adding a new user
+	# add a new user
         $pu->user("example", $pu->encpass("my_secret"), $pu->maxuid + 1, 10,
 					  "My User", "/home/example", "/bin/bash");
 	die $Passwd::Unix::Alt::errstr if $Passwd::Unix::Alt::errstr;
