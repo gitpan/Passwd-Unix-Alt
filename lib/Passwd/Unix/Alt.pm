@@ -1,6 +1,6 @@
 package Passwd::Unix::Alt;
 {
-  $Passwd::Unix::Alt::VERSION = '0.5208';
+  $Passwd::Unix::Alt::VERSION = '0.5209';
 }
 # ABSTRACT: Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
@@ -93,7 +93,7 @@ sub check_sanity {
 
 	for($self->shadow_file, $self->passwd_file, $self->group_file){
 		croak('File not found or not a file: ' . $_) unless -f $_;
-		croak('File not readable: ' . $_) unless -r _;
+		croak('File not readable: ' . $_ . ($> && m!^/etc! ? ". You are trying to access passwd and/or shadow file from /etc/; either use other files or re-run the program as root.\n" : "\n")) unless -r _;
 
 	}
 
@@ -885,7 +885,7 @@ Passwd::Unix::Alt - Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
 =head1 VERSION
 
-version 0.5208
+version 0.5209
 
 =head1 SYNOPSIS
 
