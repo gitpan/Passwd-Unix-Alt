@@ -3,7 +3,7 @@ NAME
     entries
 
 VERSION
-    version 0.5209
+    version 0.5210
 
 SYNOPSIS
             use Passwd::Unix::Alt;
@@ -81,6 +81,15 @@ ABOUT PASSWD::UNIX::ALT
 
         Instead of just returning true/false status or carping to stderr.
 
+    *   add lock option
+
+        Currently not enabled by default, needs more testing.
+
+    *   does not use bzip2 for backup files
+
+        I find compression not really necessary yet, plus bzip2 is not
+        available in some systems.
+
     The rest of the documentation is Passwd::Unix's.
 
 ABSTRACT
@@ -100,6 +109,8 @@ SUBROUTINES/METHODS
         umask - umask for creating files; default 0022 (standard for UNIX
         and Linux systems)
         backup - boolean; if set to 1, backup will be made; default 1
+        lock - boolean; if set to 1, flock() will be performed before
+        modification; default 0
         warnings - boolean; if set to 1, important warnings will be
         displayed; default 0
 

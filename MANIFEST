@@ -9,6 +9,7 @@ dist.ini
 lib/Passwd/Unix/Alt.pm
 t/00-compile.t
 t/01-basics.t
+t/02-lock.t
 t/array_compare.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
