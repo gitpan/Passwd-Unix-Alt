@@ -1,6 +1,6 @@
 package Passwd::Unix::Alt;
-BEGIN {
-  $Passwd::Unix::Alt::VERSION = '0.5207';
+{
+  $Passwd::Unix::Alt::VERSION = '0.5208';
 }
 # ABSTRACT: Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
@@ -92,8 +92,9 @@ sub check_sanity {
 	my $quiet = shift;
 
 	for($self->shadow_file, $self->passwd_file, $self->group_file){
-		next if -f $_;
-		croak('File not found: ' . $_);
+		croak('File not found or not a file: ' . $_) unless -f $_;
+		croak('File not readable: ' . $_) unless -r _;
+
 	}
 
         unless ($quiet) {
@@ -884,7 +885,7 @@ Passwd::Unix::Alt - Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
 =head1 VERSION
 
-version 0.5207
+version 0.5208
 
 =head1 SYNOPSIS
 
@@ -950,19 +951,26 @@ what is necessary in modern systems like Sun Solaris 10 or Linux).
 
 Passwd::Unix::Alt is a fork of Strzelecki Lukasz's L<Passwd::Unix> v0.52, which
 I forked to scratch some of I<my> itches, and which I hope can be merged back to
-Passwd::Unix eventually. The rest of the documentation is Passwd::Unix's.
+Passwd::Unix eventually. I use Passwd::Unix because, despite its shortcomings,
+as of mid of 2011 I think it is still the best (or perhaps the only usable)
+module on CPAN to manipulate passwd and shadow entries. This module is used by
+L<Setup::Unix::User> and L<Setup::Unix::Group>.
 
-Notable differences:
+Notable differences from Passwd::Unix v0.52:
 
 =over 4
+
+=item * add some tests
 
 =item * does not require root privileges unless necessary (useful for testing)
 
 =item * report error string in $Passwd::Unix::Alt::errstr
 
-Instead of just returning true/false status or carping to stderr..
+Instead of just returning true/false status or carping to stderr.
 
 =back
+
+The rest of the documentation is Passwd::Unix's.
 
 =head1 ABSTRACT
 
@@ -1196,7 +1204,7 @@ Steven Haryanto <stevenharyanto@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Steven Haryanto.
+This software is copyright (c) 2012 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
