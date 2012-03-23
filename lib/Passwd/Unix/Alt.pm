@@ -1,6 +1,6 @@
 package Passwd::Unix::Alt;
 {
-  $Passwd::Unix::Alt::VERSION = '0.5210';
+  $Passwd::Unix::Alt::VERSION = '0.5211';
 }
 # ABSTRACT: Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
@@ -921,7 +921,7 @@ Passwd::Unix::Alt - Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
 =head1 VERSION
 
-version 0.5210
+version 0.5211
 
 =head1 SYNOPSIS
 
@@ -988,9 +988,11 @@ what is necessary in modern systems like Sun Solaris 10 or Linux).
 Passwd::Unix::Alt is a fork of Strzelecki Lukasz's L<Passwd::Unix> v0.52, which
 I forked to scratch some of I<my> itches, and which I hope can be merged back to
 Passwd::Unix eventually. I use Passwd::Unix because, despite its shortcomings,
-as of mid of 2011 I think it is still the best (or perhaps the only usable)
-module on CPAN to manipulate passwd and shadow entries. This module is used by
-L<Setup::Unix::User> and L<Setup::Unix::Group>.
+as of mid of 2011 I think it is still the best (or perhaps the only functioning)
+module on CPAN to manipulate passwd and shadow entries. As a side note, I
+originally forked the module to create L<Setup::Unix::User> and
+L<Setup::Unix::Group>. You might want to check those two out if you need undo
+and dry-run capability.
 
 Notable differences from Passwd::Unix v0.52:
 
@@ -1028,7 +1030,7 @@ system critical files in /etc/dir.
 
 =over 4
 
-=item B<new( [ param0 => 1, param1 => 0... ] )>
+=item B<new>( [ param0 => 1, param1 => 0... ] )
 
 Constructor. Possible parameters are:
 

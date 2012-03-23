@@ -3,7 +3,7 @@ NAME
     entries
 
 VERSION
-    version 0.5210
+    version 0.5211
 
 SYNOPSIS
             use Passwd::Unix::Alt;
@@ -66,9 +66,10 @@ ABOUT PASSWD::UNIX::ALT
     which I forked to scratch some of *my* itches, and which I hope can be
     merged back to Passwd::Unix eventually. I use Passwd::Unix because,
     despite its shortcomings, as of mid of 2011 I think it is still the best
-    (or perhaps the only usable) module on CPAN to manipulate passwd and
-    shadow entries. This module is used by Setup::Unix::User and
-    Setup::Unix::Group.
+    (or perhaps the only functioning) module on CPAN to manipulate passwd
+    and shadow entries. As a side note, I originally forked the module to
+    create Setup::Unix::User and Setup::Unix::Group. You might want to check
+    those two out if you need undo and dry-run capability.
 
     Notable differences from Passwd::Unix v0.52:
 
@@ -99,7 +100,7 @@ ABSTRACT
     without using system critical files in /etc/dir.
 
 SUBROUTINES/METHODS
-    new( [ param0 = 1, param1 => 0... ] )>
+    new( [ param0 => 1, param1 => 0... ] )
         Constructor. Possible parameters are:
 
         passwd - path to passwd file; default "/etc/passwd"
