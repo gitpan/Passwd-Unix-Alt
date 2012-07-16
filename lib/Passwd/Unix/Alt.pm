@@ -1,11 +1,8 @@
 package Passwd::Unix::Alt;
-{
-  $Passwd::Unix::Alt::VERSION = '0.5211';
-}
-# ABSTRACT: Manipulate /etc/{passwd,shadow,group,gshadow} entries
-
 
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
+
+our $VERSION = '0.5212'; # VERSION
 
 use warnings;
 use strict;
@@ -565,9 +562,9 @@ sub rename {
 sub maxgid {
 	my $self = scalar @_ && ref $_[0] eq __PACKAGE__ ? shift : $Self;
 	my $max = 0;
-	open(my $fh, '<', $self->passwd_file()) or do { $errstr = "Can't open passwd file ".$self->passwd_file.": $! (".__FILE__." line ".__LINE__.")"; return };
+	open(my $fh, '<', $self->group_file()) or do { $errstr = "Can't open group file ".$self->group_file.": $! (".__FILE__." line ".__LINE__.")"; return };
 	while(<$fh>){
-		my $tmp = (split(/:/,$_))[3];
+		my $tmp = (split(/:/,$_))[2];
 		$max = $tmp > $max ? $tmp : $max;
 	}
 	close($fh);
@@ -910,6 +907,7 @@ sub groups_from_gshadow {
 }
 #======================================================================
 1;
+# ABSTRACT: Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
 
 __END__
@@ -921,7 +919,7 @@ Passwd::Unix::Alt - Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
 =head1 VERSION
 
-version 0.5211
+version 0.5212
 
 =head1 SYNOPSIS
 

@@ -7,7 +7,10 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.3601"
+    "File::Temp" => 0,
+    "File::chdir" => 0,
+    "Module::Build" => "0.3601",
+    "Test::More" => "0.96"
   },
   "configure_requires" => {
     "Module::Build" => "0.3601"
@@ -17,7 +20,7 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Passwd-Unix-Alt",
-  "dist_version" => "0.5211",
+  "dist_version" => "0.5212",
   "license" => "perl",
   "module_name" => "Passwd::Unix::Alt",
   "recommends" => {},
@@ -31,11 +34,8 @@ my %module_build_args = (
     "File::Path" => 0,
     "File::Slurp" => 0,
     "File::Spec" => 0,
-    "File::Temp" => 0,
-    "File::chdir" => 0,
     "Log::Any" => 0,
     "Sub::ScopeFinalizer" => 0,
-    "Test::More" => "0.96",
     "perl" => "5.010"
   },
   "script_files" => []

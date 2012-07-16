@@ -3,7 +3,10 @@ abstract: 'Manipulate /etc/{passwd,shadow,group,gshadow} entries'
 author:
   - 'Steven Haryanto <stevenharyanto@gmail.com>'
 build_requires:
+  File::Temp: 0
+  File::chdir: 0
   Module::Build: 0.3601
+  Test::More: 0.96
 configure_requires:
   Module::Build: 0.3601
 dynamic_config: 0
@@ -22,13 +25,10 @@ requires:
   File::Path: 0
   File::Slurp: 0
   File::Spec: 0
-  File::Temp: 0
-  File::chdir: 0
   Log::Any: 0
   Sub::ScopeFinalizer: 0
-  Test::More: 0.96
   perl: 5.010
 resources:
   homepage: http://search.cpan.org/dist/Passwd-Unix-Alt/
   repository: http://github.com/sharyanto/perl-Passwd-Unix-Alt
-version: 0.5211
+version: 0.5212

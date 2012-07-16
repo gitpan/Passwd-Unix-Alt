@@ -1,0 +1,59 @@
+{
+   "abstract" : "Manipulate /etc/{passwd,shadow,group,gshadow} entries",
+   "author" : [
+      "Steven Haryanto <stevenharyanto@gmail.com>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Passwd-Unix-Alt",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Crypt::PasswdMD5" : "1.3",
+            "Exporter" : 0,
+            "File::Basename" : 0,
+            "File::Copy" : 0,
+            "File::Flock" : 0,
+            "File::Path" : 0,
+            "File::Slurp" : 0,
+            "File::Spec" : 0,
+            "Log::Any" : 0,
+            "Sub::ScopeFinalizer" : 0,
+            "perl" : "5.010"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "File::Temp" : 0,
+            "File::chdir" : 0,
+            "Test::More" : "0.96"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "homepage" : "http://search.cpan.org/dist/Passwd-Unix-Alt/",
+      "repository" : {
+         "url" : "http://github.com/sharyanto/perl-Passwd-Unix-Alt"
+      }
+   },
+   "version" : "0.5212"
+}
+

@@ -3,7 +3,7 @@ NAME
     entries
 
 VERSION
-    version 0.5211
+    version 0.5212
 
 SYNOPSIS
             use Passwd::Unix::Alt;
