@@ -2,7 +2,7 @@ package Passwd::Unix::Alt;
 
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
 
-our $VERSION = '0.5212'; # VERSION
+our $VERSION = '0.5213'; # VERSION
 
 use warnings;
 use strict;
@@ -907,7 +907,7 @@ sub groups_from_gshadow {
 }
 #======================================================================
 1;
-# ABSTRACT: Manipulate /etc/{passwd,shadow,group,gshadow} entries
+# ABSTRACT: (DEPRECATED) Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
 
 __END__
@@ -915,11 +915,11 @@ __END__
 
 =head1 NAME
 
-Passwd::Unix::Alt - Manipulate /etc/{passwd,shadow,group,gshadow} entries
+Passwd::Unix::Alt - (DEPRECATED) Manipulate /etc/{passwd,shadow,group,gshadow} entries
 
 =head1 VERSION
 
-version 0.5212
+version 0.5213
 
 =head1 SYNOPSIS
 
@@ -1014,6 +1014,10 @@ I find compression not really necessary yet, plus bzip2 is not available in some
 systems.
 
 =back
+
+B<UPDATE 20012-08-30:> I created L<Unix::Passwd::File>, a brand new module with
+a procedural (non-OO) interface. I thereby deem this module deprecated in favor
+of the new module.
 
 The rest of the documentation is Passwd::Unix's.
 
@@ -1235,7 +1239,7 @@ None. I hope.
 
 =back
 
-=head1 AUTHOR
+=head1 ORIGINAL AUTHOR
 
 Strzelecki Lukasz <strzelec@rswsystems.com>
 
@@ -1244,6 +1248,10 @@ Strzelecki Lukasz <strzelec@rswsystems.com>
 This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
 See http://www.perl.com/perl/misc/Artistic.html
+
+=head1 SEE ALSO
+
+L<Passwd::Unix::Functional>
 
 =head1 AUTHOR
 

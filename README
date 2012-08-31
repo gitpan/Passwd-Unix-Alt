@@ -1,9 +1,9 @@
 NAME
-    Passwd::Unix::Alt - Manipulate /etc/{passwd,shadow,group,gshadow}
-    entries
+    Passwd::Unix::Alt - (DEPRECATED) Manipulate
+    /etc/{passwd,shadow,group,gshadow} entries
 
 VERSION
-    version 0.5212
+    version 0.5213
 
 SYNOPSIS
             use Passwd::Unix::Alt;
@@ -90,6 +90,10 @@ ABOUT PASSWD::UNIX::ALT
 
         I find compression not really necessary yet, plus bzip2 is not
         available in some systems.
+
+    UPDATE 20012-08-30: I created Unix::Passwd::File, a brand new module
+    with a procedural (non-OO) interface. I thereby deem this module
+    deprecated in favor of the new module.
 
     The rest of the documentation is Passwd::Unix's.
 
@@ -262,7 +266,7 @@ THANKS
     supplying relevant patch!
     BIG thanks to Artem Russakovskii for reporting a bug.
 
-AUTHOR
+ORIGINAL AUTHOR
     Strzelecki Lukasz <strzelec@rswsystems.com>
 
 LICENCE AND COPYRIGHT
@@ -270,6 +274,9 @@ LICENCE AND COPYRIGHT
     under the same terms as Perl itself.
 
     See http://www.perl.com/perl/misc/Artistic.html
+
+SEE ALSO
+    Passwd::Unix::Functional
 
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
